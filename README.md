@@ -23,7 +23,8 @@
 ### コア文書（必読）
 1. [`FOUNDATION.md`](FOUNDATION.md) - 基盤となる決定事項と原則
 2. [`MIGRATION-GUIDE.md`](MIGRATION-GUIDE.md) - 既存環境からの具体的な移行手順
-3. [`GIT-REPOSITORY-BEST-PRACTICES.md`](GIT-REPOSITORY-BEST-PRACTICES.md) - リポジトリ構成と管理
+3. [`WORKFLOW.md`](WORKFLOW.md) - 更新と運用のワークフロー
+4. [`GIT-REPOSITORY-BEST-PRACTICES.md`](GIT-REPOSITORY-BEST-PRACTICES.md) - リポジトリ構成と管理
 
 ### 専門戦略
 - [`STORAGE-STRATEGY.md`](STORAGE-STRATEGY.md) - Dropbox/Git使い分け戦略
