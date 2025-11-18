@@ -20,42 +20,60 @@
 
 ## ドキュメント構成
 
-### 基盤文書
-- [`CLAUDE.md`](CLAUDE.md) - Claude Code用の設定と指示
-- [`FOUNDATION.md`](FOUNDATION.md) - 変更困難な基盤的決定事項
+### コア文書（必読）
+1. [`FOUNDATION.md`](FOUNDATION.md) - 基盤となる決定事項と原則
+2. [`MIGRATION-GUIDE.md`](MIGRATION-GUIDE.md) - 既存環境からの具体的な移行手順
+3. [`GIT-REPOSITORY-BEST-PRACTICES.md`](GIT-REPOSITORY-BEST-PRACTICES.md) - リポジトリ構成と管理
 
-### 戦略文書
-- [`GIT-REPOSITORY-BEST-PRACTICES.md`](GIT-REPOSITORY-BEST-PRACTICES.md) - Gitリポジトリ管理のベストプラクティス
-- [`SECURITY-STRATEGY.md`](SECURITY-STRATEGY.md) - 機密情報管理とセキュリティ戦略
-- [`CROSS-DEVICE-STRATEGY.md`](CROSS-DEVICE-STRATEGY.md) - クロスデバイス環境統合戦略
-- [`WORKSTATION-INTEGRATION.md`](WORKSTATION-INTEGRATION.md) - GPUワークステーション統合
-- [`GITHUB-CLI-INTEGRATION.md`](GITHUB-CLI-INTEGRATION.md) - GitHub CLI活用戦略
+### 専門戦略
+- [`STORAGE-STRATEGY.md`](STORAGE-STRATEGY.md) - Dropbox/Git使い分け戦略
+- [`SECURITY-STRATEGY.md`](SECURITY-STRATEGY.md) - 機密情報の暗号化管理
+- [`WORKSTATION-INTEGRATION.md`](WORKSTATION-INTEGRATION.md) - GPU/Docker活用
+- [`CROSS-DEVICE-STRATEGY.md`](CROSS-DEVICE-STRATEGY.md) - iPad/WSL2統合
 
 ### 実装詳細
-- [`EXTENDED-TOOLING.md`](EXTENDED-TOOLING.md) - zsh関数とClaude Codeコマンド管理
+- [`EXTENDED-TOOLING.md`](EXTENDED-TOOLING.md) - Zsh関数とClaude Codeコマンド
+- [`GITHUB-CLI-INTEGRATION.md`](GITHUB-CLI-INTEGRATION.md) - GitHub CLI活用法
 
-### 実装例
-- [`examples/unified-setup.sh`](examples/unified-setup.sh) - 統合セットアップスクリプト
+### 設定ファイル
+- [`CLAUDE.md`](CLAUDE.md) - Claude Code用設定
+- [`examples/`](examples/) - 実装スクリプト例
 
-## リポジトリの使い方
+## クイックスタート
 
-### 1. 文書として参照
+### 既存環境から今すぐ移行を始める
+
 ```bash
-# 設計思想を理解する
-cat FOUNDATION.md
+# 自動移行スクリプトを実行
+./scripts/quick-start.sh
 
-# 実装方法を確認する
-cat GIT-REPOSITORY-BEST-PRACTICES.md
+# または、GitHubから直接実行
+curl -fsSL https://raw.githubusercontent.com/mashi727/tool-philosophy/main/scripts/quick-start.sh | bash
 ```
 
-### 2. 実装の出発点として
-```bash
-# 実際のdotfilesリポジトリを作成
-mkdir -p ~/repos/dotfiles
-cp GIT-REPOSITORY-BEST-PRACTICES.md ~/repos/dotfiles/IMPLEMENTATION.md
+このスクリプトが実行すること：
+1. 現在の設定をバックアップ
+2. dotfilesリポジトリを作成（GitHub）
+3. 既存ツールを新構造に移行
+4. インストールスクリプトを生成
+5. 初期コミット＆プッシュ
 
-# セットアップスクリプトを利用
-cp examples/unified-setup.sh ~/repos/dotfiles/setup.sh
+### 手動での段階的移行
+
+```bash
+# Step 1: リポジトリ作成
+mkdir -p ~/repos && cd ~/repos
+gh repo create dotfiles --private --clone
+
+# Step 2: 構造作成
+cd dotfiles && mkdir -p shell/zsh/functions tools scripts
+
+# Step 3: 重要なツールから移行
+cp -r ~/works/git/tools/luatex-docker-remote tools/
+cp ~/.config/zsh/functions/*.zsh shell/zsh/functions/
+
+# Step 4: コミット
+git add -A && git commit -m "Initial migration" && git push
 ```
 
 ### 3. 時系列記録の追加
