@@ -3,7 +3,7 @@
 ## 現状分析
 
 ### 既存のリソース
-- **ツール群**: `/Users/mashi/works/git/tools/` (17個のツール)
+- **ツール群**: `~/works/git/tools/` (17個のツール)
 - **Zsh関数**: `~/.config/zsh/functions/` (約20個の関数)
 - **アプリ設定**: `~/.config/` 配下の各種設定
 
