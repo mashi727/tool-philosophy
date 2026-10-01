@@ -113,5 +113,5 @@
 しかし、何のために作るのか、それで目的にかなっているのかは、どのパラダイムにも書いていない。それは道具の外にあり、人間が持ち込み、人間が責任を負うものだからである。
 
 [^1]: Masami Mashino, *Prolegomena to an Epistemology of Mediation: Introductory Definitions for Physics, Philosophy, Mathematics, and Engineering*, Zenodo, 2026. https://doi.org/10.5281/zenodo.20173238
-[^2]: Masami Mashino, *Mediation, Différance, and the V&V Asymmetry: A Discrete-Phenomenological Universal Form of the OODA Loop*, Zenodo, 2026. https://doi.org/10.5281/zenodo.20172607
+[^2]: Masami Mashino, *Mediation, Différance, and the V&V Asymmetry: A Discrete-Phenomenological Universal Form of the OODA Loop*, version 3, Zenodo, 2026. https://doi.org/10.5281/zenodo.22385888
 [^3]: 「UNIXという考え方 — Gancarz が 9 つの定理に圧縮した道具の哲学」differance-lab. https://differance-lab.tokyo/unix-philosophy-gancarz/
